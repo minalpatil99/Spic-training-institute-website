@@ -1,0 +1,111 @@
+<html>
+<head>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="container"><br>
+<h1 class"text-success  text-center"><center>Registration Form</h1></center><br>
+<div class="col-lg-8 m-auto d-block">
+<form action="#" onsubmit="return validation()" class="bg-light">
+<div class="form-group">
+<label>First Name:</label>
+<input type="text" name="user" class="form-control" id="user">
+<span id="firstname" class="text-danger font-weight-bold"></span>
+</div>
+<div class="form-group">
+<label>Last Name:</label>
+<input type="text" name="last" class="form-control" id="last">
+<span id="lastname" class="text-danger font-weight-bold"></span>
+</div>
+<div class="form-group">
+<label>Address:</label>
+<input type="text" name="pass" class="form-control" id="pass">
+<span id="passwords" class="text-danger font-weight-bold"></span>
+</div>
+<div class="form-group">
+<label>Qualification:</label>
+<input type="text" name="conpass" class="form-control" id="qualification">
+<span id="quali" class="text-danger font-weight-bold"></span>
+</div>
+<div class="form-group">
+<label>Email:</label>
+<input type="text" name="email" class="form-control" id="email">
+<span id="emailid" class="text-danger font-weight-bold"></span>
+</div>
+<div class="form-group">
+<label>Aim to join EDC:</label>
+<input type="text" name="Mobile" class="form-control" id="subject">
+<span id="sub" class="text-danger font-weight-bold"></span>
+</div>
+
+<input type="submit" name="submit" value="submit">
+</form>
+</div>
+</div>
+<script type="text/javascript">
+function validation(){
+var user = document.getElementById('user').value;
+var last= document.getElementById('last').value;
+var pass= document.getElementById('pass').value;
+var qualification = document.getElementById('qualification').value;
+var subject = document.getElementById('subject').value;
+var email= document.getElementById('email').value;
+if(user==""){
+document.getElementById('firstname').innerHTML="//Please fill the firstname field";
+return false;
+}
+
+if(!isNaN(user)){
+document.getElementById('firstname').innerHTML="//Only characters are allowed";
+return false;
+}
+if(last==""){
+document.getElementById('lastname').innerHTML="//Please fill the lastname field";
+return false;
+}
+
+
+if(!isNaN(last)){
+document.getElementById('lastname').innerHTML="//Only characters are allowed";
+return false;
+}
+
+
+if(pass==""){
+document.getElementById('passwords').innerHTML="//Please fill the address field";
+return false;
+}
+if(qualification==""){
+document.getElementById('quali').innerHTML="//Please fill the qualification field";
+return false;
+}
+if(subject==""){
+document.getElementById('sub').innerHTML="//Please fill the subject field";
+return false;
+}
+
+if(email==""){
+document.getElementById('emailid').innerHTML="//Please fill the email field";
+return false;
+}
+if(email.indexOf('@') <= 0){
+document.getElementById('emailid').innerHTML="//enter correct email";
+return false;
+}
+if((email.charAt(email.length-4)!='.') && (email.charAt(email.length-3)!='.')){
+document.getElementById('emailid').innerHTML="//enter correct email";
+return false;
+}
+return( true );
+}
+</script>
+</body>
+</html>
